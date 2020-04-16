@@ -10,6 +10,7 @@ If you have no patience to read through the whole thing in survival_analysis_uni
 > from survival_analysis_yz import two_sample_test_censored_data
 > p_G = two_sample_test_censored_data(data1, delta1, data2, delta2, weight='Gehan', censored_type='upper_limit')
 > p_L = two_sample_test_censored_data(data1, delta1, data2, delta2, weight='Logrank', censored_type='upper_limit')
+> # if you have data with lower limits, then indicate censored_type as 'lower_limit'
 
 If you end up using codes from this repo, please consider citing this paper: 
 Feigelson & Nelson (1985): https://ui.adsabs.harvard.edu/abs/1985ApJ...293..192F/abstract
