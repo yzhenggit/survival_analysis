@@ -276,10 +276,10 @@ def two_sample_test_censored_data(data1, delta1, data2, delta2, weight='Gehan', 
 
     # let's give it some warning
     if (data1.size <= 10) or (data2.size <= 10):
-        print(">> Warnin: one or both of the datasets have sample size <=10, this test maybe unreliable.")
+        print(">> Warning: one or both of the datasets have sample size <=10, %s test maybe unreliable.\n"%(weight))
 
     frac1_censored = data1[delta1==0].size/data1.size
     frac2_censored = data2[delta2==0].size/data2.size
     if (frac1_censored>0.9) or (frac2_censored>0.9):
-        print(">> Warnin: one or both of the datasets are heavily censored (>90% of values are limits), this test maybe unreliable.")
+        print(">> Warning: one or both of the datasets are heavily censored (>90 percent of values are limits), %s maybe unreliable.\n"%(weight))
     return p_val
