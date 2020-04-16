@@ -1,0 +1,3 @@
+The codes provided in this notebook are based on analytical analyses in Feigelson & Nelson (1985). The method used here is called nonparametric univariate survival analysis based on Keplan-Meier product-limit (PL) estimtor and Gehan or Logrank two-sample tests. It is designed to answer this following question:
+
+I have two left-censored univariate datasets, say, data1 {𝑥𝑖}, i=1, 2, .., N1 and data2 {𝑥𝑗}, j=1, 2, ..., N2, both datasets have detections and upper limits (or lower limits; but can't have both simultaneously). What is the possibility that data1 and data2 are drawn from the same (unknown) distribution?
