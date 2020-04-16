@@ -1,6 +1,15 @@
 The codes provided in this notebook are based on analytical analyses in Feigelson & Nelson (1985). The method used here is called nonparametric univariate survival analysis based on Keplan-Meier product-limit (PL) estimtor and Gehan or Logrank two-sample tests. It is designed to answer this following question:
 
-I have two left-censored univariate datasets, say, data1 {𝑥𝑖}, i=1, 2, .., N1 and data2 {𝑥𝑗}, j=1, 2, ..., N2, both datasets have detections and upper limits (or lower limits; but can't have both simultaneously). What is the possibility that data1 and data2 are drawn from the same (unknown) distribution?
+I have two left-censored univariate datasets, say, data1 {𝑥𝑖}, i=1, 2, .., N1 and data2 {𝑥𝑗}, j=1, 2, ..., N2, both datasets have detections and upper limits (or lower limits; but can't have both simultaneously). What is the possibility that data1 and data2 are drawn from the same (unknown) distribution? 
+
+If you have no patience to read through the whole thing in survival_analysis_univariate_problems_censored_data.ipynb, here is a quick example on how to use the code: 
+> data1 = np.array([50, 30, 60, 80, 23, 66, 33, 99]) # measurements, include both detection and limits
+> delta1 = np.array([1, 1, 1, 0, 0, 0, 1, 0]) # 1=detection, 0=upper limits
+> data2 = np.array([32, 9, 5, 100, 60, 73, 29, 88, 1, 30, 60])
+> delta2 = np.array([1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0])
+> from survival_analysis_yz import two_sample_test_censored_data
+> p_G = two_sample_test_censored_data(data1, delta1, data2, delta2, weight='Gehan', censored_type='upper_limit')
+> p_L = two_sample_test_censored_data(data1, delta1, data2, delta2, weight='Logrank', censored_type='upper_limit')
 
 If you end up using codes from this repo, please consider citing this paper: 
 Feigelson & Nelson (1985): https://ui.adsabs.harvard.edu/abs/1985ApJ...293..192F/abstract
