@@ -2,7 +2,7 @@ The codes provided in this notebook are based on analytical analyses in Feigelso
 
 I have two left-censored univariate datasets, say, data1 {𝑥𝑖}, i=1, 2, .., N1 and data2 {𝑥𝑗}, j=1, 2, ..., N2. Both datasets have detections and upper limits (or lower limits; but can't have both simultaneously). What is the possibility that data1 and data2 are drawn from the same (unknown) distribution? 
 
-Below is a quick example on how to use the code. Please refer to survival_analysis_univariate_problems_censored_data.ipynb for a more detailed read.
+Below is a quick example of how to run the tests. Please refer to survival_analysis_univariate_problems_censored_data.ipynb for a more detailed read.
 > import numpy as np 
 > data1 = np.array([50, 30, 60, 80, 23, 66, 33, 99]) # measurements, include both detection and limits
 > delta1 = np.array([1, 1, 1, 0, 0, 0, 1, 0]) # 1=detection, 0=upper limits
